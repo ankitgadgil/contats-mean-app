@@ -1,0 +1,15 @@
+{
+  "name": "starter-node-angular",
+  "author": "Ankit Gadgil, @anknite",
+  "main": "nodeserver.js",
+  "description": "mean app for demo",
+  "version": "0.0.1",
+  "dependencies": {
+    	"express" : "~4.5.1",
+	"body-parser" : "~1.4.2",
+	"method-override" : "~2.0.2",
+	"mongojs" : "*",
+	"socket.io": "*"
+  }
+}
+
