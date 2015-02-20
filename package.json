@@ -10,6 +10,9 @@
 	"method-override" : "~2.0.2",
 	"mongojs" : "*",
 	"socket.io": "*"
-  }
+  },
+   "devDependencies": {
+        "bower": "~1.2.6"
+    }
 }
 
