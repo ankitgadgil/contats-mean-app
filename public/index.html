@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
 	<head>
-		<title>Contact list </title>
+		<title>Contact my Superhero </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
@@ -14,7 +14,7 @@
 		<p>{{test}}</p>
 
 		<div class="container" ng-controller="AppCtrl">
-			<h1>Contact list</h1>
+			<h1>Super Hero Contacts</h1>
 			<table class="table">
 				<thead>
 					<tr>
@@ -23,6 +23,13 @@
 						<th>Number</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr ng-repeat="sh in superheros">
+						<td>{{sh.name}}</td>
+						<td>{{sh.email}}</td>
+						<td>{{sh.number}}</td>
+					</tr>
+				</tbody>
 			</table>
 		<!-- </div> -->
 
