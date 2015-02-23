@@ -22,6 +22,7 @@
 						<th>Email</th>
 						<th>Number</th>
 						<th>Action</th>
+						<th>&nbsp;</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -30,6 +31,7 @@
 						<td><input type="email" class="form-control" ng-model="newsuperhero.email" required></td>
 						<td><input class="form-control" ng-model="newsuperhero.number" required></td>
 						<td><button class="btn btn-primary" ng-click="addSuperhero()" ng-hide="editFlag">New contact</button><button class="btn btn-info" ng-click="updateSuperhero()" ng-show="editFlag">Update</button></td>
+						<td><button class="btn btn-info" ng-click="deselect()">Reset</button></td>
 					</tr>
 					<tr ng-repeat="sh in superheros | orderBy :'number'">
 						<td>{{sh.name}}</td>

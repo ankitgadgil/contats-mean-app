@@ -46,4 +46,13 @@ function AppCtrl($scope, $http) {
 			$scope.editFlag = false;
 		})
 	}
+
+	var reset = function() {
+		$scope.newsuperhero = {};
+	}
+
+	$scope.deselect = function () {
+		reset();
+		$scope.editFlag = false;
+	}
 }

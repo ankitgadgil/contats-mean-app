@@ -47,10 +47,13 @@ app.get('/superherocontacts', function (req, res) {
 app.post('/superherocontacts', function (req,res) {
 	console.log(req.body); // to parse the body we need body parser 
 	
-	//lets insrt the new item
-	db.superheros.insert(req.body, function (err, newsuperhero){
-		res.json(newsuperhero); // inserts the new data ana send the data to controller
-	});
+	//lets insert the new item when non of the fields is empty
+	if(req.body.name && req.body.email && req.body.number)
+	{
+		db.superheros.insert(req.body, function (err, newsuperhero){
+			res.json(newsuperhero); // inserts the new data ana send the data to controller
+		});
+	}
 });
 
 app.delete('/superherocontacts/:id', function (req, res) {
