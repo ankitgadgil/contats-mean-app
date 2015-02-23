@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html ng-app>
 	<head>
-		<title>Contact list app</title>
+		<title>Contact list </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
 	</head>
 	<body>
-		<h1>Contact list app</h1>
+		<!-- <h1>Contact list app</h1> -->
 		<input ng-model="test">
 		<p>{{test}}</p>
 
+		<div class="container" ng-controller="AppCtrl">
+			<h1>Contact list</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Number</th>
+					</tr>
+				</thead>
+			</table>
+		<!-- </div> -->
+
 		<script type="text/javascript" src="angular/angular.min.js"></script>
+		<script type="text/javascript" src="controllers/controller.js"></script>
 	</body>
 <html>
