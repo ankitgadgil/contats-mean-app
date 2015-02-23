@@ -33,6 +33,7 @@ function AppCtrl($scope, $http) {
 		console.log(id);
 		$http.get('/superherocontacts/' + id).success(function(response){
 			$scope.newsuperhero = response; //makes to be edited superhero details show up in inputboxes
+			$scope.editFlag = true;
 		})
 	}
 
@@ -42,6 +43,7 @@ function AppCtrl($scope, $http) {
 		//everything in the contact boxes will be transmitted to server
 		$http.put('/superherocontacts/' + $scope.newsuperhero._id, $scope.newsuperhero).success(function(response){
 			refresh()
+			$scope.editFlag = false;
 		})
 	}
 }

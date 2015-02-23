@@ -29,10 +29,9 @@
 						<td><input class="form-control" ng-model="newsuperhero.name" required></td>
 						<td><input type="email" class="form-control" ng-model="newsuperhero.email" required></td>
 						<td><input class="form-control" ng-model="newsuperhero.number" required></td>
-						<td><button class="btn btn-primary" ng-click="addSuperhero()">Add contact</button></td>
-						<td><button class="btn btn-info" ng-click="updateSuperhero()">Update</button></td>
+						<td><button class="btn btn-primary" ng-click="addSuperhero()" ng-hide="editFlag">New contact</button><button class="btn btn-info" ng-click="updateSuperhero()" ng-show="editFlag">Update</button></td>
 					</tr>
-					<tr ng-repeat="sh in superheros">
+					<tr ng-repeat="sh in superheros | orderBy :'number'">
 						<td>{{sh.name}}</td>
 						<td>{{sh.email}}</td>
 						<td>{{sh.number}}</td>
