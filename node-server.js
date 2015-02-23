@@ -53,5 +53,13 @@ app.post('/superherocontacts', function (req,res) {
 	});
 });
 
+app.delete('/superherocontacts/:id', function (req, res) {
+	var id = req.params.id; //get value od id from url
+	console.log(id);
+	db.superheros.remove({_id : mongojs.ObjectId(id)}, function(err, doc) {
+		res.json(doc); //send back items
+	})
+});
+
 app.listen(appPort);
 console.log("server running on port "+appPort);
