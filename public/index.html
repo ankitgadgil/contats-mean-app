@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<!-- <h1>Contact list app</h1> -->
-		<input ng-model="test">
-		<p>{{test}}</p>
+	<!-- 	<input ng-model="test">
+		<p>{{test}}</p> -->
 
 		<div class="container" ng-controller="AppCtrl">
 			<h1>Super Hero Contacts</h1>
@@ -21,9 +21,16 @@
 						<th>Name</th>
 						<th>Email</th>
 						<th>Number</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td><input class="form-control" ng-model="newsuperhero.name" required></td>
+						<td><input type="email" class="form-control" ng-model="newsuperhero.email" required></td>
+						<td><input class="form-control" ng-model="newsuperhero.number" required></td>
+						<td><button class="btn btn-primary" ng-click="addContact()">Add contact</button></td>
+					</tr>
 					<tr ng-repeat="sh in superheros">
 						<td>{{sh.name}}</td>
 						<td>{{sh.email}}</td>

@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/bower_components"));
+app.use(bodyParser.json());
 
-app.get('/contactlist', function (req, res) {
+app.get('/superherocontacts', function (req, res) {
 	console.log("Received a GET request")
 
 	db.superheros.find(function (err, superhero_docs) {
@@ -42,6 +43,15 @@ app.get('/contactlist', function (req, res) {
 // app.get('/', function (req, res) {
 // 	res.send("hello world from node-server.js")
 // })
+
+app.post('/superherocontacts', function (req,res) {
+	console.log(req.body); // to parse the body we need body parser 
+	
+	//lets insrt the new item
+	db.superheros.insert(req.body, function (err, newsuperhero){
+		res.json(newsuperhero); // inserts the new data ana send the data to controller
+	});
+});
 
 app.listen(appPort);
 console.log("server running on port "+appPort);
