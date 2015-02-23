@@ -1,4 +1,6 @@
-# contats-mean-app
+# contats-mean-app 
+MEAM branch
+Database => mongodb
 
 App that lets you add, modify and remove contacts. Serves best for a MEAN demo.
 
