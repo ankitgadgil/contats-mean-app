@@ -13,7 +13,7 @@ function AppCtrl($scope, $http) {
 
 	refresh();
 
-	$scope.addContact = function(){
+	$scope.addSuperhero = function(){
 		console.log($scope.newsuperhero);
 		$http.post('/superherocontacts', $scope.newsuperhero).success(function(response){
 			console.log(response);
@@ -26,6 +26,22 @@ function AppCtrl($scope, $http) {
 		$http.delete('/superherocontacts/' + id).success(function(response){
 			console.log(response);
 			refresh();
+		})
+	}
+
+	$scope.editSuperhero = function (id){
+		console.log(id);
+		$http.get('/superherocontacts/' + id).success(function(response){
+			$scope.newsuperhero = response; //makes to be edited superhero details show up in inputboxes
+		})
+	}
+
+	$scope.updateSuperhero = function() {
+		console.log($scope.newsuperhero._id);
+
+		//everything in the contact boxes will be transmitted to server
+		$http.put('/superherocontacts/' + $scope.newsuperhero._id, $scope.newsuperhero).success(function(response){
+			refresh()
 		})
 	}
 }

@@ -61,5 +61,27 @@ app.delete('/superherocontacts/:id', function (req, res) {
 	})
 });
 
+app.get('/superherocontacts/:id', function (req,res) {
+	var id = req.params.id;
+	console.log(id);
+
+	///this will select data using id and update all the fileds in mongo and send a response json to controller
+	db.superheros.findOne({_id : mongojs.ObjectId(id)}, function(err, doc) {
+		res.json(doc);
+	});
+})
+
+app.put('/superherocontacts/:id', function (req,res) { 
+	var id = req.params.id;
+	console.log(req.body.name);
+
+	///this will select data using id and update all the fileds in mongo and send a response json to controller
+	db.superheros.findAndModify({query: {_id: mongojs.ObjectId(id)},
+		update : {$set : {name: req.body.name, email: req.body.email, number: req.body.number}},
+		new : true}, function (err, updatedoc) {
+			res.json(updatedoc); //sends updated response json to controller
+		});
+})
+
 app.listen(appPort);
 console.log("server running on port "+appPort);
