@@ -7,3 +7,7 @@ MEAN stack - MongoDB, Express.js, Angular.js and Node.js
 
 Bower for component management.
 
+1. git clone the repo
+2. inside the repo: npm install
+3. if needed, npm install bower
+
