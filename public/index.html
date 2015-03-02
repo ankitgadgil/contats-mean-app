@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html ng-app>
 	<head>
-		<title>Contact my Superhero </title>
+		<title>Contact my Superhero - {MEAN}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
+		<!--favicon for app-->
+		<link rel="shortcut icon" href="/images/mean_custom.png">
 	</head>
 	<body>
 		<!-- <h1>Contact list app</h1> -->
@@ -39,6 +41,11 @@
 						<td>{{sh.number}}</td>
 						<td><button class="btn btn-danger" ng-click="removeSuperhero(sh._id)">Remove</button></td>
 						<td><button class="btn btn-warning" ng-click="editSuperhero(sh._id)">Edit</td>
+					</tr>
+					<tr ng-hide="editFlag">
+						<td>{{newsuperhero.name}}</td>
+						<td>{{newsuperhero.email}}</td>
+						<td>{{newsuperhero.number}}</td>
 					</tr>
 				</tbody>
 			</table>
